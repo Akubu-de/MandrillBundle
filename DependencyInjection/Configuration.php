@@ -42,10 +42,9 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('slot_mandrill');
-
-        $rootNode
+        $treeBuilder = new TreeBuilder('slot_mandrill');
+        
+        $treeBuilder->getRootNode()
         ->children()
             ->arrayNode('default')
                 ->isRequired()
